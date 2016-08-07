@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Colors.Net</id>
+    <version>1.0.0</version>
+    <authors>Ahmed ElSayed</authors>
+    <owners>Ahmed ElSayed</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/ahmelsayed/Colors.Net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ahmelsayed/Colors.Net</projectUrl>
+    <description>Displating colored output to console easily.</description>
+    <releaseNotes>Initial version</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>console cli cmd System.Console</tags>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>
