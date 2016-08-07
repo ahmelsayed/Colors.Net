@@ -3,6 +3,12 @@
 Colors.Net
 ==========
 
+## Installation:
+
+```powershell
+PS> Install-Package Colors.Net
+```
+
 ## Basic usage:
 
 ```csharp
