@@ -10,94 +10,44 @@ namespace Colors.Net
             return $"{color}{value}{color}";
         }
 
-        public static string DarkBlue(string  value)
+        internal static string ColorString(string value, ConsoleColor color)
         {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.DarkBlue];
-            return $"{color}{value}{color}";
+            var colorChar = Data.ConsoleColorToUnicode[color];
+            if (value[0] >= '\uE000')
+            {
+                value = value.Trim(value[0]);
+            }
+            return $"{colorChar}{value}{colorChar}";
         }
 
-        public static string DarkGreen(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.DarkGreen];
-            return $"{color}{value}{color}";
-        }
+        public static string DarkBlue(string value) => ColorString(value, ConsoleColor.DarkBlue);
 
-        public static string DarkCyan(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.DarkCyan];
-            return $"{color}{value}{color}";
-        }
+        public static string DarkGreen(string value) => ColorString(value, ConsoleColor.DarkGreen);
 
-        public static string DarkRed(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.DarkRed];
-            return $"{color}{value}{color}";
-        }
+        public static string DarkCyan(string value) => ColorString(value, ConsoleColor.DarkCyan);
 
-        public static string DarkMagenta(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.DarkMagenta];
-            return $"{color}{value}{color}";
-        }
+        public static string DarkRed(string value) => ColorString(value, ConsoleColor.DarkRed);
 
-        public static string DarkYellow(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.DarkYellow];
-            return $"{color}{value}{color}";
-        }
+        public static string DarkMagenta(string value) => ColorString(value, ConsoleColor.DarkMagenta);
 
-        public static string Gray(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.Gray];
-            return $"{color}{value}{color}";
-        }
+        public static string DarkYellow(string  value) => ColorString(value, ConsoleColor.DarkYellow);
 
-        public static string DarkGray(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.DarkGray];
-            return $"{color}{value}{color}";
-        }
+        public static string Gray(string  value) => ColorString(value, ConsoleColor.Gray);
 
-        public static string Blue(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.Blue];
-            return $"{color}{value}{color}";
-        }
+        public static string DarkGray(string  value) => ColorString(value, ConsoleColor.DarkGray);
 
-        public static string Green(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.Green];
-            return $"{color}{value}{color}";
-        }
+        public static string Blue(string  value) => ColorString(value, ConsoleColor.Blue);
 
-        public static string Cyan(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.Cyan];
-            return $"{color}{value}{color}";
-        }
+        public static string Green(string  value) => ColorString(value, ConsoleColor.Green);
 
-        public static string Red(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.Red];
-            return $"{color}{value}{color}";
-        }
+        public static string Cyan(string  value) => ColorString(value, ConsoleColor.Cyan);
 
-        public static string Magenta(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.Magenta];
-            return $"{color}{value}{color}";
-        }
+        public static string Red(string  value) => ColorString(value, ConsoleColor.Red);
 
-        public static string Yellow(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.Yellow];
-            return $"{color}{value}{color}";
-        }
+        public static string Magenta(string  value) => ColorString(value, ConsoleColor.Magenta);
 
-        public static string White(string  value)
-        {
-            var color = Data.ConsoleColorToUnicode[ConsoleColor.White];
-            return $"{color}{value}{color}";
-        }
+        public static string Yellow(string  value) => ColorString(value, ConsoleColor.Yellow);
+
+        public static string White(string  value) => ColorString(value, ConsoleColor.White);
     }
 }
