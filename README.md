@@ -66,7 +66,7 @@ ColoredConsole
 
 and this prints:
 
-![Nested colors](https://cloud.githubusercontent.com/assets/645740/17464666/4a85523c-5c99-11e6-94de-85926c2e44e3.png)
+![Nested colors](https://cloud.githubusercontent.com/assets/645740/17465392/9dc08938-5caa-11e6-84db-fc0fe26f26c4.PNG)
 
 
 ### Fluent-like Api:
