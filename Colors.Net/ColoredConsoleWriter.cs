@@ -14,7 +14,6 @@ namespace Colors.Net
         public ColoredConsoleWriter(TextWriter writer)
         {
             _writer = writer;
-
         }
 
         public IConsoleWriter Write(string value)

@@ -10,44 +10,44 @@ namespace Colors.Net
             return $"{color}{value}{color}";
         }
 
-        internal static string ColorString(string value, ConsoleColor color)
+        internal static RichString ColorString(string value, ConsoleColor color)
         {
             var colorChar = Data.ConsoleColorToUnicode[color];
             if (value[0] >= '\uE000')
             {
                 value = value.Trim(value[0]);
             }
-            return $"{colorChar}{value}{colorChar}";
+            return new RichString($"{colorChar}{value}{colorChar}");
         }
 
-        public static string DarkBlue(string value) => ColorString(value, ConsoleColor.DarkBlue);
+        public static RichString DarkBlue(string value) => ColorString(value, ConsoleColor.DarkBlue);
 
-        public static string DarkGreen(string value) => ColorString(value, ConsoleColor.DarkGreen);
+        public static RichString DarkGreen(string value) => ColorString(value, ConsoleColor.DarkGreen);
 
-        public static string DarkCyan(string value) => ColorString(value, ConsoleColor.DarkCyan);
+        public static RichString DarkCyan(string value) => ColorString(value, ConsoleColor.DarkCyan);
 
-        public static string DarkRed(string value) => ColorString(value, ConsoleColor.DarkRed);
+        public static RichString DarkRed(string value) => ColorString(value, ConsoleColor.DarkRed);
 
-        public static string DarkMagenta(string value) => ColorString(value, ConsoleColor.DarkMagenta);
+        public static RichString DarkMagenta(string value) => ColorString(value, ConsoleColor.DarkMagenta);
 
-        public static string DarkYellow(string  value) => ColorString(value, ConsoleColor.DarkYellow);
+        public static RichString DarkYellow(string  value) => ColorString(value, ConsoleColor.DarkYellow);
 
-        public static string Gray(string  value) => ColorString(value, ConsoleColor.Gray);
+        public static RichString Gray(string  value) => ColorString(value, ConsoleColor.Gray);
 
-        public static string DarkGray(string  value) => ColorString(value, ConsoleColor.DarkGray);
+        public static RichString DarkGray(string  value) => ColorString(value, ConsoleColor.DarkGray);
 
-        public static string Blue(string  value) => ColorString(value, ConsoleColor.Blue);
+        public static RichString Blue(string  value) => ColorString(value, ConsoleColor.Blue);
 
-        public static string Green(string  value) => ColorString(value, ConsoleColor.Green);
+        public static RichString Green(string  value) => ColorString(value, ConsoleColor.Green);
 
-        public static string Cyan(string  value) => ColorString(value, ConsoleColor.Cyan);
+        public static RichString Cyan(string  value) => ColorString(value, ConsoleColor.Cyan);
 
-        public static string Red(string  value) => ColorString(value, ConsoleColor.Red);
+        public static RichString Red(string  value) => ColorString(value, ConsoleColor.Red);
 
-        public static string Magenta(string  value) => ColorString(value, ConsoleColor.Magenta);
+        public static RichString Magenta(string  value) => ColorString(value, ConsoleColor.Magenta);
 
-        public static string Yellow(string  value) => ColorString(value, ConsoleColor.Yellow);
+        public static RichString Yellow(string  value) => ColorString(value, ConsoleColor.Yellow);
 
-        public static string White(string  value) => ColorString(value, ConsoleColor.White);
+        public static RichString White(string value) => ColorString(value, ConsoleColor.White);
     }
 }
