@@ -1,4 +1,4 @@
-![Colors.Net](https://cloud.githubusercontent.com/assets/645740/17464702/5c8f2af6-5c9a-11e6-973e-18e5ab77765c.png)
+![Colors.Net](https://cloud.githubusercontent.com/assets/645740/17468032/e9b76234-5cd8-11e6-96ef-82c0732137e7.png)
 
 Colors.Net
 ==========
