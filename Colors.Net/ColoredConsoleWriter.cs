@@ -16,8 +16,9 @@ namespace Colors.Net
             _writer = writer;
         }
 
-        public IConsoleWriter Write(string value)
+        public IConsoleWriter Write(object ovalue)
         {
+            var value = ovalue.ToString();
             var startIndex = 0;
             var endIndex = 0;
             for (var i =0; i < value.Length; i++)
@@ -62,7 +63,7 @@ namespace Colors.Net
             return Write(Environment.NewLine);
         }
 
-        public IConsoleWriter WriteLine(string value)
+        public IConsoleWriter WriteLine(object value)
         {
             Write(value);
             return Write(Environment.NewLine);

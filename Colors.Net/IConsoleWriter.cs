@@ -3,8 +3,8 @@ namespace Colors.Net
 {
     public interface IConsoleWriter
     {
-        IConsoleWriter Write(string value);
+        IConsoleWriter Write(object value);
         IConsoleWriter WriteLine();
-        IConsoleWriter WriteLine(string value);
+        IConsoleWriter WriteLine(object value);
     }
 }

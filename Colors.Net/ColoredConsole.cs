@@ -3,7 +3,7 @@ namespace Colors.Net
 {
     public static class ColoredConsole
     {
-        public static IConsoleWriter Write(string value)
+        public static IConsoleWriter Write(object value)
         {
             Out.Write(value);
             return Out;
@@ -15,7 +15,7 @@ namespace Colors.Net
             return Out;
         }
 
-        public static IConsoleWriter WriteLine(string value)
+        public static IConsoleWriter WriteLine(object value)
         {
             Out.WriteLine(value);
             return Out;
