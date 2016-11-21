@@ -18,7 +18,7 @@ namespace Colors.Net
 
         public IConsoleWriter Write(object ovalue)
         {
-            var value = ovalue.ToString();
+            var value = ovalue?.ToString() ?? string.Empty;
             var startIndex = 0;
             var endIndex = 0;
             for (var i =0; i < value.Length; i++)
