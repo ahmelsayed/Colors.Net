@@ -12,12 +12,19 @@ namespace Colors.Net
 
         internal static RichString ColorString(string value, ConsoleColor color)
         {
-            var colorChar = Data.ConsoleColorToUnicode[color];
-            if (value[0] >= '\uE000')
+            if (!string.IsNullOrEmpty(value))
             {
-                value = value.Trim(value[0]);
+                var colorChar = Data.ConsoleColorToUnicode[color];
+                if (value[0] >= '\uE000')
+                {
+                    value = value.Trim(value[0]);
+                }
+                return new RichString($"{colorChar}{value}{colorChar}");
             }
-            return new RichString($"{colorChar}{value}{colorChar}");
+            else
+            {
+                return new RichString(string.Empty);
+            }
         }
 
         public static RichString DarkBlue(string value) => ColorString(value, ConsoleColor.DarkBlue);
