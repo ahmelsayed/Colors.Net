@@ -6,7 +6,8 @@ namespace Colors.Net
 {
     public class ColoredConsoleWriter : IConsoleWriter
     {
-        private static readonly object _lock = new object();
+        private static readonly object _colorLock = new object();
+        private static readonly object _writeLock = new object();
         private static readonly ConsoleColor OriginalConsoleColor = Console.ForegroundColor;
         private static readonly Stack<ConsoleColor> _colorStack = new Stack<ConsoleColor>(new[] { OriginalConsoleColor });
         private readonly TextWriter _writer;
@@ -18,38 +19,40 @@ namespace Colors.Net
 
         public IConsoleWriter Write(object ovalue)
         {
-            var value = ovalue?.ToString() ?? string.Empty;
-            var startIndex = 0;
-            var endIndex = 0;
-            for (var i =0; i < value.Length; i++)
+            lock (_writeLock)
             {
-                ConsoleColor nextColor;
-                if (Data.UnicodeToConsoleColor.TryGetValue(value[i], out nextColor))
+                var value = ovalue?.ToString() ?? string.Empty;
+                var startIndex = 0;
+                var endIndex = 0;
+                for (var i = 0; i < value.Length; i++)
                 {
-                    var currentColor = _colorStack.Count == 0 ? OriginalConsoleColor : _colorStack.Pop();
-                    WriteColor(value.Substring(startIndex, endIndex - startIndex), currentColor);
-                    if (currentColor != nextColor)
+                    ConsoleColor nextColor;
+                    if (Data.UnicodeToConsoleColor.TryGetValue(value[i], out nextColor))
                     {
-                        _colorStack.Push(currentColor);
-                        _colorStack.Push(nextColor);
+                        var currentColor = _colorStack.Count == 0 ? OriginalConsoleColor : _colorStack.Pop();
+                        WriteColor(value.Substring(startIndex, endIndex - startIndex), currentColor);
+                        if (currentColor != nextColor)
+                        {
+                            _colorStack.Push(currentColor);
+                            _colorStack.Push(nextColor);
+                        }
+                        startIndex = i + 1;
+                        endIndex = i + 1;
                     }
-                    startIndex = i + 1;
-                    endIndex = i + 1;
+                    else
+                    {
+                        endIndex++;
+                    }
                 }
-                else
-                {
-                    endIndex++;
-                }
+
+                WriteColor(value.Substring(startIndex, endIndex - startIndex), OriginalConsoleColor);
+                return this;
             }
-
-            WriteColor(value.Substring(startIndex, endIndex - startIndex), OriginalConsoleColor);
-
-            return this;
         }
 
         private void WriteColor(string value, ConsoleColor color)
         {
-            lock(_lock)
+            lock(_colorLock)
             {
                 var originalColor = Console.ForegroundColor;
                 Console.ForegroundColor = color;

@@ -1,11 +1,8 @@
 ﻿using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using Colors.Net.StringColorExtensions;
 using static Colors.Net.StringStaticMethods;
-
-using System;
-using System.Drawing;
-using Console = Colorful.Console;
-using Colorful;
 
 namespace Colors.Net.Runner
 {
@@ -24,12 +21,16 @@ namespace Colors.Net.Runner
             var stopwatch = new Stopwatch();
             stopwatch.Start();
 
-                var @yellow = Yellow("I'm Yellow!");
-                var @red = Red("I'm Red!");
-                var @blue = "I'm Blue".Blue(); // just to show a different way
-
-                ColoredConsole
-                    .WriteLine($@"{Green($"I'm green yet {@yellow}, {@red}, {@blue} and back to green.")}");
+            Parallel.ForEach(Enumerable.Range(0, 10000),
+                new ParallelOptions { MaxDegreeOfParallelism = 50 },
+                i =>
+                {
+                    var @yellow = Yellow("I'm Yellow!");
+                    var @red = Red("I'm Red!");
+                    var @blue = "I'm Blue".Blue(); // just to show a different way
+                    ColoredConsole
+                        .WriteLine($@"{Green($"I'm green yet {@yellow}, {@red}, {@blue} and back to green.")}");
+                });
 
 
             for (var i = 0; i < 1; i++)
