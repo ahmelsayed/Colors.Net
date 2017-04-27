@@ -27,7 +27,7 @@ ColoredConsole.WriteLine($"{"Hello".Red()}, world!");
 
 or
 
-````csharp
+```csharp
 using static Colors.Net.StringStaticMethods;
 
 ColoredConsole.WriteLine($"{Red("Hello")}, World");
