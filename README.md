@@ -82,7 +82,7 @@ ColoredConsole
 
 and that prints:
 
-![Chaining] (https://cloud.githubusercontent.com/assets/645740/17464667/4a857e06-5c99-11e6-928b-0934d88e4390.png)
+![Chaining](https://cloud.githubusercontent.com/assets/645740/17464667/4a857e06-5c99-11e6-928b-0934d88e4390.png)
 
 ## Credits:
 The interface is inspired by [colors.js](https://github.com/marak/colors.js/).
