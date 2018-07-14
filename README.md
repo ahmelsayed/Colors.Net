@@ -84,6 +84,15 @@ and that prints:
 
 ![Chaining](https://cloud.githubusercontent.com/assets/645740/17464667/4a857e06-5c99-11e6-928b-0934d88e4390.png)
 
+## Performance cost:
+
+```csharp
+ColoredConsole
+    .WriteLine($@"{Green($"I'm green yet {@yellow}, {@red}, {@blue} and back to green.")}");
+```
+
+Has `0.1 msec` overhead when compared to `Console.WriteLine()`. This is measured by the Runner project doing this 10,000 with an extra runtime of `1000 msec`. 
+
 ## Credits:
 The interface is inspired by [colors.js](https://github.com/marak/colors.js/).
 
